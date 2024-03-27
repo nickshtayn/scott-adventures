@@ -18,13 +18,10 @@ const reverseWordOrder = (string) => {
     for (let i = 0; i < string.length; i++) {
         if (string[i] !== ' ') {
             currentWord += string[i];
-        }
-        else if (string[i + 1] === ' ') {
-            reversedString += currentWord;
-            currentWord = '';
-        }
-        else {
-            return reversedString
+            if (string[i + 1] === ' ' || i + 1 === string.length) {
+                console.log(currentWord += reversedString);
+                currentWord = '';
+            }
         }
     }
 }
