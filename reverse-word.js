@@ -12,13 +12,19 @@
 // return new reversed string
 
 const reverseWordOrder = (string) => {
-    let word = '';
-    let words = [];
+    let currentWord = '';
     let reversedString = '';
 
-    for (i = 0; i < string.length; i++) {
-        if (string[i] === ' ') {
-            word += string[i]
+    for (let i = 0; i < string.length; i++) {
+        if (string[i] !== ' ') {
+            currentWord += string[i];
+        }
+        else if (string[i + 1] === ' ') {
+            reversedString += currentWord;
+            currentWord = '';
+        }
+        else {
+            return reversedString
         }
     }
 }
